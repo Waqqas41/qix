@@ -14,7 +14,7 @@ SCREEN_HEIGHT = 600
 BORDER_WIDTH = 10
 MARKER_RADIUS = 5
 MARKER_SPEED = 5
-QIX_SIZE = random.randrange(30,50)
+QIX_SIZE = random.randrange(20,50)
 QIX_SPEED = 3
 SPARX_SIZE = random.randrange(5,9)
 SPARX_SPEED = 1
@@ -26,19 +26,18 @@ QIX_COLOR = (255, 0, 255)
 SPARX_COLOR = (255, 0, 0)
 DRAWING_COLOR = (0, 0, 255)
 BG_COLOR = (75, 75, 75)
-MIN_CLAIM_PERCENT = 5  # Minimum percentage of area to claim
+MIN_CLAIM_PERCENT = 1  # Minimum percentage of area to claim
 MAX_CLAIM_PERCENT = 100  # Minimum percentage of area to claim
 WIN_THRESHOLD = int((
     input("What % is the winning threshold? ")
 ))  # Win when input % of the area is claimed
 
-if WIN_THRESHOLD < MIN_CLAIM_PERCENT or WIN_THRESHOLD > MAX_CLAIM_PERCENT:
-    print("not a valid percentage! enter a number between 5-100")
+while WIN_THRESHOLD < MIN_CLAIM_PERCENT or WIN_THRESHOLD > MAX_CLAIM_PERCENT:
+    print("not a valid percentage! enter a number between 1-100")
     WIN_THRESHOLD = int((
     input("What % is the winning threshold? ")
 ))  # Win when input % of the area is claimed
-    pygame.quit()
-    sys.exit()
+       
 
 # Game states
 class GameState(Enum):
