@@ -27,9 +27,18 @@ SPARX_COLOR = (255, 0, 0)
 DRAWING_COLOR = (0, 0, 255)
 BG_COLOR = (75, 75, 75)
 MIN_CLAIM_PERCENT = 5  # Minimum percentage of area to claim
-WIN_THRESHOLD = int(
+MAX_CLAIM_PERCENT = 100  # Minimum percentage of area to claim
+WIN_THRESHOLD = int((
     input("What % is the winning threshold? ")
-)  # Win when input % of the area is claimed
+))  # Win when input % of the area is claimed
+
+if WIN_THRESHOLD < MIN_CLAIM_PERCENT or WIN_THRESHOLD > MAX_CLAIM_PERCENT:
+    print("not a valid percentage! enter a number between 5-100")
+    WIN_THRESHOLD = int((
+    input("What % is the winning threshold? ")
+))  # Win when input % of the area is claimed
+    pygame.quit()
+    sys.exit()
 
 # Game states
 class GameState(Enum):
