@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "qix"
+version = "0.1.0"
+description = "This is a Python implementation for the popular game Qix"
+authors = ["Mushfiqur Rahman <realmrahman.19@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pygame = "^2.6.1"
+sympy = "^1.13.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
