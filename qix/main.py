@@ -14,9 +14,9 @@ SCREEN_HEIGHT = 600
 BORDER_WIDTH = 10
 MARKER_RADIUS = 5
 MARKER_SPEED = 5
-QIX_SIZE = 40
+QIX_SIZE = random.randrange(30,50)
 QIX_SPEED = 3
-SPARX_SIZE = 8
+SPARX_SIZE = random.randrange(5,9)
 SPARX_SPEED = 1
 FILL_COLOR = (0, 255, 0, 100)  # Semi-transparent green
 CLAIMED_COLOR = (0, 200, 0)
@@ -27,7 +27,9 @@ SPARX_COLOR = (255, 0, 0)
 DRAWING_COLOR = (0, 0, 255)
 BG_COLOR = (75, 75, 75)
 MIN_CLAIM_PERCENT = 5  # Minimum percentage of area to claim
-WIN_THRESHOLD = 75  # Win when 75% of the area is claimed
+WIN_THRESHOLD = int(
+    input("What % is the winning threshold? ")
+)  # Win when input % of the area is claimed
 
 # Game states
 class GameState(Enum):
